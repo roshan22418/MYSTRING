@@ -21,10 +21,31 @@ Mystring::Mystring(const char *src){
 
 }
 
-Mystring::Mystring(const Mystring &src){
+Mystring::Mystring(const Mystring &other){
+    data = new char[other.length1 +1];
+    length1 = other.length1;
+    strcpy(data,other.data);
+
 
 }
 
-int main(){
+int Mystring::length() const{
+    return length1;
 
+}
+bool Mystring::isempty()
+{
+    return length1==0;
+}
+
+Mystring::~Mystring(){
+    delete[] data;
+}
+
+const char *Mystring::c_str() const{
+    return data;
+}
+std::ostream &operator<<{std::ostream &os,const Mystring &str}{
+    os<<str.c_str();
+    return os.
 }

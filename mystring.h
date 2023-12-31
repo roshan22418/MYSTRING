@@ -16,6 +16,7 @@ public:
     int length() const;
     bool isempty();
 
+    friend std::ostream&operator<<(std::ostream &os,const Mystring &str);
 
 };
 
